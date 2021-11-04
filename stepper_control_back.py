@@ -20,6 +20,7 @@ print("start")
 while True:
   with open("/home/pi/cgi/stepper_control.txt", 'r') as f:  
     values = f.read().split()
+    print(values)
     target = int(values[0])
     zero = str(values[1])
 
