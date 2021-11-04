@@ -22,7 +22,8 @@ while True:
     values = f.read().split()
     print(values)
     target = int(values[0])
-    zero = str(values[1])
+    change = str(values[1])
+    zero = str(values[2])
 
     if zero == "Zero":
       motor.zero()
