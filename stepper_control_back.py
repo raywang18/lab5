@@ -22,7 +22,7 @@ while True:
     if f.read():  
       line = f.read()
       values = line.split()
-      print(values)
+      print(line)
       target = 0
       zero = "haha"
       print(target, zero)
