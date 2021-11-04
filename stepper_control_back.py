@@ -23,7 +23,7 @@ while True:
     target = int(values[0])
     zero = str(values[1])
 
-    if zero != "None":
+    if zero == "Zero":
       motor.zero()
     else:
       motor.goAngle(target)
