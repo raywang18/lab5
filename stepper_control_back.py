@@ -18,13 +18,12 @@ motor = stepper.Stepper(pins[0], pins[1], pins[2], pins[3], ledPin)
 
 print("start")
 while True:
-  with open("/home/pi/cgi/stepper_control.txt", 'r') as f:
-    if f.read():  
-      values = f.read()
+  with open("/home/pi/cgi/stepper_control.txt", 'r') as f: 
+    if 1 == 1:  
+      values = f.readlines()
       print(values)
       target = 0
       zero = "haha"
-      print(target, zero)
 
       if zero != "None":
         motor.zero()
