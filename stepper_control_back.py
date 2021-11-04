@@ -22,7 +22,7 @@ while True:
     print("reading")
     if f.read() != "":  
       values = f.read().split("\t")
-      target = int(values[0])
+      target = values[0]
       zero = values[1]
       print(target, zero)
 
