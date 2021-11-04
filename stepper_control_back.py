@@ -18,17 +18,15 @@ motor = stepper.Stepper(pins[0], pins[1], pins[2], pins[3], ledPin)
 
 print("start")
 while True:
-  with open("/home/pi/cgi/stepper_control.txt", 'r') as f: 
-    if 1 == 1:  
-      values = f.read().split()
-      print(values)
-      target = values[0]
-      zero = str(values[1])
+  with open("/home/pi/cgi/stepper_control.txt", 'r') as f:  
+    values = f.read().split()
+    target = int(values[0])
+    zero = str(values[1])
 
-      if zero != "None":
-        motor.zero()
-      else:
-        motor.goAngle(target)
+    if zero != "None":
+      motor.zero()
+    else:
+      motor.goAngle(target)
     time.sleep(0.1)
 
 GPIO.cleanup() 
