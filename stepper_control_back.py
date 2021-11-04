@@ -20,10 +20,10 @@ print("start")
 while True:
   with open("/home/pi/cgi/stepper_control.txt", 'r') as f: 
     if 1 == 1:  
-      values = f.read()
+      values = f.read().split()
       print(values)
-      target = 0
-      zero = "haha"
+      target = values[0]
+      zero = str(values[1])
 
       if zero != "None":
         motor.zero()
