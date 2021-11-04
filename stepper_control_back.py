@@ -20,7 +20,7 @@ print("start")
 while True:
   with open("/home/pi/cgi/stepper_control.txt", 'r') as f: 
     if 1 == 1:  
-      values = f.readlines()
+      values = f.read()
       print(values)
       target = 0
       zero = "haha"
