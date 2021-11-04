@@ -25,9 +25,9 @@ while True:
     change = str(values[1])
     zero = str(values[2])
 
-    if zero == "Zero":
+    if zero == "Zero" and change == "None":
       motor.zero()
-    else:
+    if zero == "None" and change == "Change":
       motor.goAngle(target)
     time.sleep(0.1)
 
