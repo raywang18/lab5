@@ -21,10 +21,10 @@ while True:
     target = int(values[0])
     zero = values[1]
 
-    if target:
-      motor.goAngle(target)
-    if zero:
+    if zero != "None":
       motor.zero()
+    else:
+      motor.goAngle(target)
   time.sleep(0.1)
 
 GPIO.cleanup() 
