@@ -4,12 +4,12 @@ import RPi.GPIO as GPIO
 import time
 import stepper
 
-ledPin = 19
+ledPin = 22
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(ledPin, GPIO.OUT)
 
-pins = [18,21,22,23]
+pins = [18,23,24,25]
 for pin in pins:
   GPIO.setup(pin, GPIO.OUT, initial=0)
 
