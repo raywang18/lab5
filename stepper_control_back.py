@@ -19,11 +19,11 @@ motor = stepper.Stepper(pins[0], pins[1], pins[2], pins[3], ledPin)
 print("start")
 while True:
   with open("/home/pi/cgi/stepper_control.txt", 'r') as f:
-    print(f.read())
-    if f.read() == "oogabooga":  
+    if f.read():  
       values = f.read().split("\t")
-      target = values[0]
-      zero = values[1]
+      print(values)
+      target = 0
+      zero = "haha"
       print(target, zero)
 
       if zero != "None":
