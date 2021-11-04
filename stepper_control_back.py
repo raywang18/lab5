@@ -1,0 +1,30 @@
+#!/usr/bin/python3
+
+import RPi.GPIO as GPIO
+import time
+import stepper
+
+ledPin = 19
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(ledPin, GPIO.OUT)
+
+pins = [18,21,22,23]
+for pin in pins:
+  GPIO.setup(pin, GPIO.OUT, initial=0)
+
+motor = stepper.Stepper(pins[0], pins[1], pins[2], pins[3], ledPin)
+
+while True:
+  with open("stepper_control.txt", 'r') as f:
+    values = f.read().split("\t")
+    target = int(values[0])
+    zero = values[1]
+
+    if target:
+      motor.goAngle(target)
+    if zero:
+      motor.zero()
+  time.sleep(0.1)
+
+GPIO.cleanup() 
