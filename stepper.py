@@ -11,6 +11,7 @@ class Stepper:
     self.cw = self.ccw[:]
     self.cw.reverse() 
     self.angle = 0
+    self.led = led
 
   def goAngle(self, target):
     dir = self.ccw
