@@ -18,7 +18,7 @@ motor = stepper.Stepper(pins[0], pins[1], pins[2], pins[3], ledPin)
 
 print("start")
 while True:
-  with open("stepper_control.txt", 'r') as f:
+  with open("/home/pi/cgi/stepper_control.txt", 'r') as f:
     print("reading")
     if f.read() != "":  
       values = f.read().split("\t")
