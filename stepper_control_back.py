@@ -7,6 +7,7 @@ import stepper
 ledPin = 22
 
 GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
 GPIO.setup(ledPin, GPIO.OUT)
 
 pins = [18,23,24,25]
@@ -19,15 +20,16 @@ print("start")
 while True:
   with open("stepper_control.txt", 'r') as f:
     print("reading")
-    values = f.read().split("\t")
-    target = int(values[0])
-    zero = values[1]
-    print(target, zero)
+    if f.read() != "":  
+      values = f.read().split("\t")
+      target = int(values[0])
+      zero = values[1]
+      print(target, zero)
 
-    if zero != "None":
-      motor.zero()
-    else:
-      motor.goAngle(target)
-  time.sleep(0.1)
+      if zero != "None":
+        motor.zero()
+      else:
+        motor.goAngle(target)
+    time.sleep(0.1)
 
 GPIO.cleanup() 
