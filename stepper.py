@@ -17,7 +17,7 @@ class Stepper:
     dir = self.ccw
     if math.sin(self.angle - target) >= 0:
       dir = self.cw
-    dist = 512 * (self.angle - target) // 360
+    dist = 512 * abs(self.angle - target) // 360
 
     for i in range(dist):
       for halfstep in range(8):
